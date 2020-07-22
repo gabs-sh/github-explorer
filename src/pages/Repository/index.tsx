@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRouteMatch, Link } from 'react-router-dom';
-import { FiChevronLeft as Icon } from 'react-icons/fi'
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
-import { Header, RepositoryInfo } from './styles';
+import { Header, RepositoryInfo, Issues } from './styles';
 import logoImg from '../../assets/logo.svg';
 
 interface RepositoryParams {
@@ -17,15 +17,15 @@ const Repository: React.FC = () => {
     <>
       <Header>
         <img src={logoImg} alt="Github Explorer" />
-        <Link to="/dashboard">
-          <Icon size={16} />
+        <Link to="/">
+          <FiChevronLeft size={16} />
           Voltar
         </Link>
       </Header>
 
       <RepositoryInfo>
         <header>
-          <img src="https://avatars0.githubusercontent.com/u/55443604?s=460&v=4" alt="Gabriel"/>
+          <img src="https://avatars0.githubusercontent.com/u/55443604?s=460&v=4" alt="Gabriel" />
           <div>
             <strong>gabrielSilvaN/buscaCEP</strong>
             <p>Descrição</p>
@@ -42,10 +42,20 @@ const Repository: React.FC = () => {
           </li>
           <li>
             <strong>67</strong>
-            <span>Issues</span>
+            <span>Issues abertas</span>
           </li>
         </ul>
       </RepositoryInfo>
+
+      <Issues>
+        <Link  to='dsfsadf'>
+          <div>
+            <strong>repository.full_name</strong>
+            <p>repository.description</p>
+          </div>
+          <FiChevronRight size={20} />
+        </Link>
+      </Issues>
     </>
   )
 }
